@@ -1,0 +1,47 @@
+                         Chronologic VCS (TM)
+            Version R-2020.12 -- Sat May  6 21:51:04 2023
+               Copyright (c) 1991-2020 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file './fifo_tb.v'
+Parsing included file 'fifo.v'.
+Back to file './fifo_tb.v'.
+Top Level Modules:
+       fifo_tb
+No TimeScale specified
+Starting vcs inline pass...
+
+1 module and 0 UDP read.
+recompiling module fifo_tb
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -m32 -m32 -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/apps/synopsys/vcs/R-2020.12/linux/lib -L/apps/synopsys/vcs/R-2020.12/linux/lib  -Wl,-rpath-link=./   objs/amcQw_d.o   _12663_archive_1.so _prev_archive_1.so  SIM_l.o       rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /apps/synopsys/vcs/R-2020.12/linux/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive          /apps/synopsys/vcs/R-2020.12/linux/lib/vcs_save_restore_new.o /apps/synopsys/vcs/R-2020.12/linux/lib/ctype-stubs_32.a -ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+CPU time: .196 seconds to compile + .201 seconds to elab + .247 seconds to link
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12; Runtime version R-2020.12;  May  6 21:51 2023
+WRITTEN:           0, FULL: 0, EMPTY: 0
+WRITTEN:           1, FULL: 0, EMPTY: 0
+WRITTEN:           2, FULL: 0, EMPTY: 0
+WRITTEN:           3, FULL: 0, EMPTY: 0
+WRITTEN:           4, FULL: 0, EMPTY: 0
+WRITTEN:           5, FULL: 0, EMPTY: 0
+WRITTEN:           6, FULL: 1, EMPTY: 0
+READING:   0, FULL: 0, EMPTY: 0
+READING:   1, FULL: 0, EMPTY: 0
+READING:   2, FULL: 0, EMPTY: 0
+READING:   3, FULL: 0, EMPTY: 0
+READING:   4, FULL: 0, EMPTY: 0
+READING:   5, FULL: 0, EMPTY: 0
+READING:   6, FULL: 0, EMPTY: 1
+$finish called from file "./fifo_tb.v", line 97.
+$finish at simulation time                  645
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 645
+CPU Time:      0.340 seconds;       Data structure size:   0.0Mb
+Sat May  6 21:51:07 2023

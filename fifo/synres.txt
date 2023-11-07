@@ -1,0 +1,1183 @@
+                                        
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+                                        
+              Version K-2015.06-SP5-1 for linux64 - Feb 26, 2016 
+                                        
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/015954770@SJSUAD.SJSU.EDU/.synopsys_dv_prefs.tcl
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25
+set synthetic_library {dw_foundation.sldb standard.sldb}
+dw_foundation.sldb standard.sldb
+set_min_library /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25 -min_version /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_BCCOM25
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25'
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_BCCOM25'
+1
+read_sverilog ./fifo.v
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/gtech.db'
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/standard.sldb'
+  Loading link library 'tc240c'
+  Loading link library 'gtech'
+Loading sverilog file '/home/015954770@SJSUAD.SJSU.EDU/man_scan/fifo/fifo.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/dw_foundation.sldb'
+Warning: The following synthetic libraries should be added to 
+	the list of link libraries: 
+	'dw_foundation.sldb'. (UISN-26)
+Compiling source file /home/015954770@SJSUAD.SJSU.EDU/man_scan/fifo/fifo.v
+
+Inferred memory devices in process
+	in routine fifo line 13 in file
+		'/home/015954770@SJSUAD.SJSU.EDU/man_scan/fifo/fifo.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      fifo_reg       | Flip-flop |  128  |  Y  | N  | N  | N  | N  | N  | N  |
+|      w_ptr_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|      r_ptr_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|     fifo/31      |   8    |   16    |      3       |
+======================================================
+Presto compilation completed successfully.
+Current design is now '/home/015954770@SJSUAD.SJSU.EDU/man_scan/fifo/fifo.db:fifo'
+Loaded 1 design.
+Current design is 'fifo'.
+fifo
+current_design fifo 
+Current design is 'fifo'.
+{fifo}
+link
+
+  Linking design 'fifo'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  tc240c (library)            /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25
+
+1
+check_design
+ 
+****************************************
+check_design summary:
+Version:     K-2015.06-SP5-1
+Date:        Sat May  6 21:46:54 2023
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               2
+    Cells do not drive (LINT-1)                                     2
+--------------------------------------------------------------------------------
+
+Warning: In design 'fifo', cell 'C658' does not drive any nets. (LINT-1)
+Warning: In design 'fifo', cell 'C662' does not drive any nets. (LINT-1)
+1
+create_clock clk -name clk -period 10
+1
+set_propagated_clock clk
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_clock_uncertainty .05 clk
+1
+set_fix_hold clk
+1
+compile -map_effort high
+Warning: The following synthetic libraries should be added to 
+	the list of link libraries: 
+	'dw_foundation.sldb'. (UISN-26)
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | K-2015.06-DWBB_201506.5.1
+                                                               |     *     |
+| Licensed DW Building Blocks        | K-2015.06-DWBB_201506.5.1
+                                                               |     *     |
+============================================================================
+
+
+Information: There are 2 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'fifo'
+Information: Added key list 'DesignWare' to design 'fifo'. (DDB-72)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Implementation Selection
+  ----------------------------------
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:02    1554.5      0.00       0.0       0.0                                0.00  
+    0:00:02    1554.5      0.00       0.0       0.0                                0.00  
+    0:00:02    1554.5      0.00       0.0       0.0                                0.00  
+    0:00:02    1554.5      0.00       0.0       0.0                                0.00  
+    0:00:02    1554.5      0.00       0.0       0.0                                0.00  
+    0:00:02    1147.5      0.00       0.0       0.0                                0.00  
+    0:00:02    1145.5      0.00       0.0       0.0                                0.00  
+    0:00:02    1145.5      0.00       0.0       0.0                                0.00  
+    0:00:02    1145.5      0.00       0.0       0.0                                0.00  
+    0:00:02    1145.5      0.00       0.0       0.0                                0.00  
+    0:00:02    1145.5      0.00       0.0       0.0                                0.00  
+    0:00:02    1145.5      0.00       0.0       0.0                                0.00  
+    0:00:02    1145.5      0.00       0.0       0.0                                0.00  
+    0:00:02    1145.5      0.00       0.0       0.0                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:02    1145.5      0.00       0.0       0.0                                0.00  
+    0:00:02    1145.5      0.00       0.0       0.0                                0.00  
+    0:00:02    1145.0      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:02    1145.0      0.00       0.0       0.0                                0.00  
+    0:00:02    1145.0      0.00       0.0       0.0                                0.00  
+    0:00:02    1143.0      0.00       0.0       0.0                                0.00  
+    0:00:02    1143.0      0.00       0.0       0.0                                0.00  
+    0:00:02    1143.0      0.00       0.0       0.0                                0.00  
+    0:00:02    1143.0      0.00       0.0       0.0                                0.00  
+    0:00:02    1143.0      0.00       0.0       0.0                                0.00  
+    0:00:02    1143.0      0.00       0.0       0.0                                0.00  
+    0:00:02    1143.0      0.00       0.0       0.0                                0.00  
+    0:00:02    1143.0      0.00       0.0       0.0                                0.00  
+    0:00:02    1143.0      0.00       0.0       0.0                                0.00  
+    0:00:02    1143.0      0.00       0.0       0.0                                0.00  
+    0:00:02    1143.0      0.00       0.0       0.0                                0.00  
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25'
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_BCCOM25'
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+report_cell
+Information: Updating graph... (UID-83)
+ 
+****************************************
+Report : cell
+Design : fifo
+Version: K-2015.06-SP5-1
+Date   : Sat May  6 21:46:58 2023
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U63                       CAOR2X1         tc240c          2.500000  
+U64                       CAOR2X1         tc240c          2.500000  
+U65                       CAOR2X1         tc240c          2.500000  
+U66                       CAOR2X1         tc240c          2.500000  
+U67                       CAOR2X1         tc240c          2.500000  
+U68                       CAOR2X1         tc240c          2.500000  
+U69                       CAOR2X1         tc240c          2.500000  
+U70                       CAOR2X1         tc240c          2.500000  
+U71                       CAOR2X1         tc240c          2.500000  
+U72                       CAOR2X1         tc240c          2.500000  
+U73                       CAOR2X1         tc240c          2.500000  
+U74                       CAOR2X1         tc240c          2.500000  
+U75                       CAOR2X1         tc240c          2.500000  
+U76                       CAOR2X1         tc240c          2.500000  
+U77                       CAOR2X1         tc240c          2.500000  
+U78                       CAOR2X1         tc240c          2.500000  
+U79                       CAOR2X1         tc240c          2.500000  
+U80                       CAOR2X1         tc240c          2.500000  
+U81                       CAOR2X1         tc240c          2.500000  
+U82                       CAOR2X1         tc240c          2.500000  
+U83                       CAOR2X1         tc240c          2.500000  
+U84                       CAOR2X1         tc240c          2.500000  
+U85                       CAOR2X1         tc240c          2.500000  
+U86                       CAOR2X1         tc240c          2.500000  
+U87                       CAOR2X1         tc240c          2.500000  
+U88                       CAOR2X1         tc240c          2.500000  
+U89                       CAOR2X1         tc240c          2.500000  
+U90                       CAOR2X1         tc240c          2.500000  
+U91                       CAOR2X1         tc240c          2.500000  
+U92                       CAOR2X1         tc240c          2.500000  
+U93                       CAOR2X1         tc240c          2.500000  
+U94                       CAOR2X1         tc240c          2.500000  
+U95                       CAOR2X1         tc240c          2.500000  
+U96                       CAOR2X1         tc240c          2.500000  
+U97                       CAOR2X1         tc240c          2.500000  
+U98                       CAOR2X1         tc240c          2.500000  
+U99                       CAOR2X1         tc240c          2.500000  
+U100                      CAOR2X1         tc240c          2.500000  
+U101                      CAOR2X1         tc240c          2.500000  
+U102                      CAOR2X1         tc240c          2.500000  
+U103                      CAOR2X1         tc240c          2.500000  
+U104                      CAOR2X1         tc240c          2.500000  
+U105                      CAOR2X1         tc240c          2.500000  
+U106                      CAOR2X1         tc240c          2.500000  
+U107                      CAOR2X1         tc240c          2.500000  
+U108                      CAOR2X1         tc240c          2.500000  
+U109                      CAOR2X1         tc240c          2.500000  
+U110                      CAOR2X1         tc240c          2.500000  
+U111                      CAOR2X1         tc240c          2.500000  
+U112                      CAOR2X1         tc240c          2.500000  
+U113                      CAOR2X1         tc240c          2.500000  
+U114                      CAOR2X1         tc240c          2.500000  
+U115                      CAOR2X1         tc240c          2.500000  
+U116                      CAOR2X1         tc240c          2.500000  
+U117                      CAOR2X1         tc240c          2.500000  
+U118                      CAOR2X1         tc240c          2.500000  
+U119                      CAOR2X1         tc240c          2.500000  
+U120                      CAOR2X1         tc240c          2.500000  
+U121                      CAOR2X1         tc240c          2.500000  
+U122                      CAOR2X1         tc240c          2.500000  
+U123                      CAOR2X1         tc240c          2.500000  
+U124                      CAOR2X1         tc240c          2.500000  
+U125                      CAOR2X1         tc240c          2.500000  
+U126                      CAOR2X1         tc240c          2.500000  
+U127                      CAOR2X1         tc240c          2.500000  
+U128                      CAOR2X1         tc240c          2.500000  
+U129                      CAOR2X1         tc240c          2.500000  
+U130                      CAOR2X1         tc240c          2.500000  
+U131                      CAOR2X1         tc240c          2.500000  
+U132                      CAOR2X1         tc240c          2.500000  
+U133                      CAOR2X1         tc240c          2.500000  
+U134                      CAOR2X1         tc240c          2.500000  
+U135                      CAOR2X1         tc240c          2.500000  
+U136                      CAOR2X1         tc240c          2.500000  
+U137                      CAOR2X1         tc240c          2.500000  
+U138                      CAOR2X1         tc240c          2.500000  
+U139                      CAOR2X1         tc240c          2.500000  
+U140                      CAOR2X1         tc240c          2.500000  
+U141                      CAOR2X1         tc240c          2.500000  
+U142                      CAOR2X1         tc240c          2.500000  
+U143                      CAOR2X1         tc240c          2.500000  
+U144                      CAOR2X1         tc240c          2.500000  
+U145                      CAOR2X1         tc240c          2.500000  
+U146                      CAOR2X1         tc240c          2.500000  
+U147                      CAOR2X1         tc240c          2.500000  
+U148                      CAOR2X1         tc240c          2.500000  
+U149                      CAOR2X1         tc240c          2.500000  
+U150                      CAOR2X1         tc240c          2.500000  
+U151                      CAOR2X1         tc240c          2.500000  
+U152                      CAOR2X1         tc240c          2.500000  
+U153                      CAOR2X1         tc240c          2.500000  
+U154                      CAOR2X1         tc240c          2.500000  
+U155                      CAOR2X1         tc240c          2.500000  
+U156                      CAOR2X1         tc240c          2.500000  
+U157                      CAOR2X1         tc240c          2.500000  
+U158                      CAOR2X1         tc240c          2.500000  
+U159                      CAOR2X1         tc240c          2.500000  
+U160                      CAOR2X1         tc240c          2.500000  
+U161                      CAOR2X1         tc240c          2.500000  
+U162                      CAOR2X1         tc240c          2.500000  
+U163                      CAOR2X1         tc240c          2.500000  
+U164                      CAOR2X1         tc240c          2.500000  
+U165                      CAOR2X1         tc240c          2.500000  
+U166                      CAOR2X1         tc240c          2.500000  
+U167                      CAOR2X1         tc240c          2.500000  
+U168                      CAOR2X1         tc240c          2.500000  
+U169                      CAOR2X1         tc240c          2.500000  
+U170                      CAOR2X1         tc240c          2.500000  
+U171                      CAOR2X1         tc240c          2.500000  
+U172                      CAOR2X1         tc240c          2.500000  
+U173                      CAOR2X1         tc240c          2.500000  
+U174                      CAOR2X1         tc240c          2.500000  
+U175                      CAOR2X1         tc240c          2.500000  
+U176                      CAOR2X1         tc240c          2.500000  
+U177                      CAOR2X1         tc240c          2.500000  
+U178                      CAOR2X1         tc240c          2.500000  
+U179                      CAOR2X1         tc240c          2.500000  
+U180                      CAOR2X1         tc240c          2.500000  
+U181                      CAOR2X1         tc240c          2.500000  
+U182                      CAOR2X1         tc240c          2.500000  
+U183                      CAOR2X1         tc240c          2.500000  
+U184                      CAOR2X1         tc240c          2.500000  
+U185                      CAOR2X1         tc240c          2.500000  
+U186                      CAOR2X1         tc240c          2.500000  
+U187                      CAOR2X1         tc240c          2.500000  
+U188                      CAOR2X1         tc240c          2.500000  
+U189                      CAOR2X1         tc240c          2.500000  
+U190                      CAOR2X1         tc240c          2.500000  
+U191                      CAOR2X1         tc240c          2.500000  
+U192                      CAOR2X1         tc240c          2.500000  
+U193                      CAOR2X1         tc240c          2.500000  
+U194                      CAOR2X1         tc240c          2.500000  
+U195                      CAOR2X1         tc240c          2.500000  
+U196                      CAOR2X1         tc240c          2.500000  
+U197                      CAOR2X1         tc240c          2.500000  
+U198                      CAOR2X1         tc240c          2.500000  
+U199                      CAOR2X1         tc240c          2.500000  
+U200                      CAOR2X1         tc240c          2.500000  
+U201                      CAOR2X1         tc240c          2.500000  
+U202                      CAOR2X1         tc240c          2.500000  
+U203                      CAOR2X1         tc240c          2.500000  
+U204                      CAOR2X1         tc240c          2.500000  
+U205                      CAOR2X1         tc240c          2.500000  
+U206                      CAOR2X1         tc240c          2.500000  
+U207                      COAN1X1         tc240c          2.000000  
+U208                      CND3XL          tc240c          1.500000  
+U209                      CND3XL          tc240c          1.500000  
+U210                      CND3XL          tc240c          1.500000  
+U211                      CND3XL          tc240c          1.500000  
+U212                      CIVX2           tc240c          1.000000  
+U213                      CIVX2           tc240c          1.000000  
+U214                      CIVX2           tc240c          1.000000  
+U215                      CIVX2           tc240c          1.000000  
+U216                      CNR4X1          tc240c          2.000000  
+U217                      CNR2X1          tc240c          1.000000  
+U218                      CND2X1          tc240c          1.000000  
+U219                      CND2X1          tc240c          1.000000  
+U220                      CIVX2           tc240c          1.000000  
+U221                      CIVX2           tc240c          1.000000  
+U222                      CIVX2           tc240c          1.000000  
+U223                      CIVX2           tc240c          1.000000  
+U224                      COND2X1         tc240c          2.000000  
+U225                      CIVX2           tc240c          1.000000  
+U226                      CNR2X1          tc240c          1.000000  
+U227                      CNR3X1          tc240c          2.000000  
+U228                      CNR2X1          tc240c          1.000000  
+U229                      CANR3X1         tc240c          2.000000  
+U230                      CNR3XL          tc240c          1.500000  
+U231                      CENX1           tc240c          2.000000  
+U232                      CND2X1          tc240c          1.000000  
+U233                      CND3XL          tc240c          1.500000  
+U234                      CEOX1           tc240c          2.000000  
+U235                      CEOX1           tc240c          2.000000  
+U236                      COND1XL         tc240c          1.500000  
+U237                      CND2X1          tc240c          1.000000  
+U238                      CANR1X1         tc240c          2.000000  
+U239                      CNR2IX1         tc240c          1.500000  
+U240                      CNR2IX1         tc240c          1.500000  
+U241                      CNR2IX1         tc240c          1.500000  
+U242                      CNR2IX1         tc240c          1.500000  
+U243                      COND1XL         tc240c          1.500000  
+U244                      CAN2X1          tc240c          1.500000  
+U245                      CAN2X1          tc240c          1.500000  
+U246                      CAN2X1          tc240c          1.500000  
+U247                      CAN2X1          tc240c          1.500000  
+U248                      COND11X1        tc240c          2.000000  
+U249                      CND2X1          tc240c          1.000000  
+U250                      COND11X1        tc240c          2.000000  
+U251                      CND2X1          tc240c          1.000000  
+U252                      COND4CX1        tc240c          2.000000  
+U253                      CND2X1          tc240c          1.000000  
+U254                      COND2X1         tc240c          2.000000  
+U255                      COND2X1         tc240c          2.000000  
+U256                      COR3X1          tc240c          2.000000  
+U257                      CENX1           tc240c          2.000000  
+U258                      CENX1           tc240c          2.000000  
+U259                      CND2X1          tc240c          1.000000  
+U260                      COND1XL         tc240c          1.500000  
+U261                      CANR2X1         tc240c          2.000000  
+U262                      CND2X1          tc240c          1.000000  
+U263                      CNR2X1          tc240c          1.000000  
+U264                      CNR2X1          tc240c          1.000000  
+U265                      CANR2X1         tc240c          2.000000  
+U266                      CNR2X1          tc240c          1.000000  
+U267                      CNR2X1          tc240c          1.000000  
+U268                      CANR2X1         tc240c          2.000000  
+U269                      CANR2X1         tc240c          2.000000  
+U270                      CANR2X1         tc240c          2.000000  
+U271                      CND4X1          tc240c          2.000000  
+U272                      CANR2X1         tc240c          2.000000  
+U273                      CANR2X1         tc240c          2.000000  
+U274                      CANR2X1         tc240c          2.000000  
+U275                      CANR2X1         tc240c          2.000000  
+U276                      CND4X1          tc240c          2.000000  
+U277                      CANR2X1         tc240c          2.000000  
+U278                      CANR2X1         tc240c          2.000000  
+U279                      CANR2X1         tc240c          2.000000  
+U280                      CANR2X1         tc240c          2.000000  
+U281                      CND4X1          tc240c          2.000000  
+U282                      CANR2X1         tc240c          2.000000  
+U283                      CANR2X1         tc240c          2.000000  
+U284                      CANR2X1         tc240c          2.000000  
+U285                      CANR2X1         tc240c          2.000000  
+U286                      CND4X1          tc240c          2.000000  
+U287                      CANR2X1         tc240c          2.000000  
+U288                      CANR2X1         tc240c          2.000000  
+U289                      CANR2X1         tc240c          2.000000  
+U290                      CANR2X1         tc240c          2.000000  
+U291                      CND4X1          tc240c          2.000000  
+U292                      CANR2X1         tc240c          2.000000  
+U293                      CANR2X1         tc240c          2.000000  
+U294                      CANR2X1         tc240c          2.000000  
+U295                      CANR2X1         tc240c          2.000000  
+U296                      CND4X1          tc240c          2.000000  
+U297                      CANR2X1         tc240c          2.000000  
+U298                      CANR2X1         tc240c          2.000000  
+U299                      CANR2X1         tc240c          2.000000  
+U300                      CANR2X1         tc240c          2.000000  
+U301                      CND4X1          tc240c          2.000000  
+U302                      CANR2X1         tc240c          2.000000  
+U303                      CANR2X1         tc240c          2.000000  
+U304                      CANR2X1         tc240c          2.000000  
+U305                      CANR2X1         tc240c          2.000000  
+U306                      CND4X1          tc240c          2.000000  
+U307                      CANR2X1         tc240c          2.000000  
+U308                      CANR2X1         tc240c          2.000000  
+U309                      CANR2X1         tc240c          2.000000  
+U310                      CANR2X1         tc240c          2.000000  
+U311                      CND4X1          tc240c          2.000000  
+U312                      CANR2X1         tc240c          2.000000  
+U313                      CANR2X1         tc240c          2.000000  
+U314                      CANR2X1         tc240c          2.000000  
+U315                      CANR2X1         tc240c          2.000000  
+U316                      CND4X1          tc240c          2.000000  
+U317                      CANR2X1         tc240c          2.000000  
+U318                      CANR2X1         tc240c          2.000000  
+U319                      CANR2X1         tc240c          2.000000  
+U320                      CANR2X1         tc240c          2.000000  
+U321                      CND4X1          tc240c          2.000000  
+U322                      CANR2X1         tc240c          2.000000  
+U323                      CANR2X1         tc240c          2.000000  
+U324                      CANR2X1         tc240c          2.000000  
+U325                      CANR2X1         tc240c          2.000000  
+U326                      CND4X1          tc240c          2.000000  
+U327                      CANR2X1         tc240c          2.000000  
+U328                      CANR2X1         tc240c          2.000000  
+U329                      CANR2X1         tc240c          2.000000  
+U330                      CANR2X1         tc240c          2.000000  
+U331                      CND4X1          tc240c          2.000000  
+U332                      CANR2X1         tc240c          2.000000  
+U333                      CANR2X1         tc240c          2.000000  
+U334                      CANR2X1         tc240c          2.000000  
+U335                      CANR2X1         tc240c          2.000000  
+U336                      CND4X1          tc240c          2.000000  
+U337                      CANR2X1         tc240c          2.000000  
+U338                      CANR2X1         tc240c          2.000000  
+U339                      CANR2X1         tc240c          2.000000  
+U340                      CANR2X1         tc240c          2.000000  
+U341                      CND4X1          tc240c          2.000000  
+U342                      CANR2X1         tc240c          2.000000  
+U343                      CANR2X1         tc240c          2.000000  
+U344                      CANR2X1         tc240c          2.000000  
+U345                      CANR2X1         tc240c          2.000000  
+U346                      CND4X1          tc240c          2.000000  
+U347                      CIVX2           tc240c          1.000000  
+U348                      CIVX2           tc240c          1.000000  
+U349                      CIVX2           tc240c          1.000000  
+U350                      CIVX2           tc240c          1.000000  
+U351                      CIVX2           tc240c          1.000000  
+U352                      CIVX2           tc240c          1.000000  
+U353                      CIVX2           tc240c          1.000000  
+U354                      CIVX2           tc240c          1.000000  
+U355                      CIVX2           tc240c          1.000000  
+U356                      CIVX2           tc240c          1.000000  
+U357                      CIVX2           tc240c          1.000000  
+data_out_reg[0]           CFD1QXL         tc240c          3.500000  n
+data_out_reg[1]           CFD1QXL         tc240c          3.500000  n
+data_out_reg[2]           CFD1QXL         tc240c          3.500000  n
+data_out_reg[3]           CFD1QXL         tc240c          3.500000  n
+data_out_reg[4]           CFD1QXL         tc240c          3.500000  n
+data_out_reg[5]           CFD1QXL         tc240c          3.500000  n
+data_out_reg[6]           CFD1QXL         tc240c          3.500000  n
+data_out_reg[7]           CFD1QXL         tc240c          3.500000  n
+data_out_reg[8]           CFD1QXL         tc240c          3.500000  n
+data_out_reg[9]           CFD1QXL         tc240c          3.500000  n
+data_out_reg[10]          CFD1QXL         tc240c          3.500000  n
+data_out_reg[11]          CFD1QXL         tc240c          3.500000  n
+data_out_reg[12]          CFD1QXL         tc240c          3.500000  n
+data_out_reg[13]          CFD1QXL         tc240c          3.500000  n
+data_out_reg[14]          CFD1QXL         tc240c          3.500000  n
+data_out_reg[15]          CFD1QXL         tc240c          3.500000  n
+fifo_reg[0][0]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[0][1]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[0][2]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[0][3]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[0][4]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[0][5]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[0][6]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[0][7]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[0][8]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[0][9]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[0][10]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[0][11]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[0][12]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[0][13]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[0][14]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[0][15]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[1][0]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[1][1]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[1][2]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[1][3]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[1][4]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[1][5]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[1][6]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[1][7]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[1][8]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[1][9]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[1][10]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[1][11]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[1][12]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[1][13]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[1][14]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[1][15]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[2][0]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[2][1]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[2][2]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[2][3]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[2][4]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[2][5]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[2][6]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[2][7]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[2][8]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[2][9]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[2][10]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[2][11]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[2][12]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[2][13]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[2][14]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[2][15]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[3][0]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[3][1]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[3][2]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[3][3]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[3][4]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[3][5]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[3][6]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[3][7]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[3][8]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[3][9]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[3][10]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[3][11]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[3][12]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[3][13]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[3][14]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[3][15]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[4][0]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[4][1]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[4][2]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[4][3]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[4][4]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[4][5]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[4][6]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[4][7]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[4][8]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[4][9]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[4][10]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[4][11]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[4][12]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[4][13]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[4][14]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[4][15]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[5][0]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[5][1]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[5][2]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[5][3]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[5][4]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[5][5]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[5][6]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[5][7]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[5][8]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[5][9]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[5][10]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[5][11]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[5][12]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[5][13]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[5][14]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[5][15]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[6][0]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[6][1]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[6][2]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[6][3]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[6][4]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[6][5]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[6][6]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[6][7]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[6][8]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[6][9]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[6][10]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[6][11]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[6][12]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[6][13]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[6][14]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[6][15]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[7][0]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[7][1]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[7][2]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[7][3]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[7][4]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[7][5]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[7][6]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[7][7]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[7][8]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[7][9]            CFD1QXL         tc240c          3.500000  n
+fifo_reg[7][10]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[7][11]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[7][12]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[7][13]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[7][14]           CFD1QXL         tc240c          3.500000  n
+fifo_reg[7][15]           CFD1QXL         tc240c          3.500000  n
+r_ptr_reg[0]              CFD1XL          tc240c          4.000000  n
+r_ptr_reg[1]              CFD1QXL         tc240c          3.500000  n
+r_ptr_reg[2]              CFD1QXL         tc240c          3.500000  n
+w_ptr_reg[0]              CFD1QXL         tc240c          3.500000  n
+w_ptr_reg[1]              CFD1QXL         tc240c          3.500000  n
+w_ptr_reg[2]              CFD1QXL         tc240c          3.500000  n
+--------------------------------------------------------------------------------
+Total 445 cells                                           1143.000000
+1
+report_net
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+ 
+****************************************
+Report : net
+Design : fifo
+Version: K-2015.06-SP5-1
+Date   : Sat May  6 21:46:58 2023
+****************************************
+
+
+Operating Conditions: NOMIN25   Library: tc240c
+Wire Load Model Mode: top
+
+
+Net                 Fanout     Fanin      Load   Resistance    Pins   Attributes
+--------------------------------------------------------------------------------
+N15                     11         1     90.06         0.00      12   
+N16                      5         1     54.00         0.00       6   
+N17                      5         1     63.04         0.00       6   
+N42                      1         1      6.74         0.00       2   
+N43                      1         1      6.74         0.00       2   
+N44                      1         1      6.74         0.00       2   
+N45                      1         1      6.74         0.00       2   
+N46                      1         1      6.74         0.00       2   
+N47                      1         1      6.74         0.00       2   
+N48                      1         1      6.74         0.00       2   
+N49                      1         1      6.74         0.00       2   
+N50                      1         1      6.74         0.00       2   
+N51                      1         1      6.74         0.00       2   
+N52                      1         1      6.74         0.00       2   
+N53                      1         1      6.74         0.00       2   
+N54                      1         1      6.74         0.00       2   
+N55                      1         1      6.74         0.00       2   
+N56                      1         1      6.74         0.00       2   
+N57                      1         1      6.74         0.00       2   
+clk                    150         1    450.00         0.00     151   
+data_in[0]               8         1     61.96         0.00       9   
+data_in[1]               8         1     61.96         0.00       9   
+data_in[2]               8         1     61.96         0.00       9   
+data_in[3]               8         1     61.96         0.00       9   
+data_in[4]               8         1     61.96         0.00       9   
+data_in[5]               8         1     61.96         0.00       9   
+data_in[6]               8         1     61.96         0.00       9   
+data_in[7]               8         1     61.96         0.00       9   
+data_in[8]               8         1     61.96         0.00       9   
+data_in[9]               8         1     61.96         0.00       9   
+data_in[10]              8         1     61.96         0.00       9   
+data_in[11]              8         1     61.96         0.00       9   
+data_in[12]              8         1     61.96         0.00       9   
+data_in[13]              8         1     61.96         0.00       9   
+data_in[14]              8         1     61.96         0.00       9   
+data_in[15]              8         1     61.96         0.00       9   
+data_out[0]              2         1      7.51         0.00       3   
+data_out[1]              2         1      7.51         0.00       3   
+data_out[2]              2         1      7.51         0.00       3   
+data_out[3]              2         1      7.51         0.00       3   
+data_out[4]              2         1      7.51         0.00       3   
+data_out[5]              2         1      7.51         0.00       3   
+data_out[6]              2         1      7.51         0.00       3   
+data_out[7]              2         1      7.51         0.00       3   
+data_out[8]              2         1      7.51         0.00       3   
+data_out[9]              2         1      7.51         0.00       3   
+data_out[10]             2         1      7.51         0.00       3   
+data_out[11]             2         1      7.51         0.00       3   
+data_out[12]             2         1      7.51         0.00       3   
+data_out[13]             2         1      7.51         0.00       3   
+data_out[14]             2         1      7.51         0.00       3   
+data_out[15]             2         1      7.51         0.00       3   
+empty                    1         1      0.00         0.00       2   
+fifo[0][0]               2         1     15.44         0.00       3   
+fifo[0][1]               2         1     15.44         0.00       3   
+fifo[0][2]               2         1     15.44         0.00       3   
+fifo[0][3]               2         1     15.44         0.00       3   
+fifo[0][4]               2         1     15.44         0.00       3   
+fifo[0][5]               2         1     15.44         0.00       3   
+fifo[0][6]               2         1     15.44         0.00       3   
+fifo[0][7]               2         1     15.44         0.00       3   
+fifo[0][8]               2         1     15.44         0.00       3   
+fifo[0][9]               2         1     15.44         0.00       3   
+fifo[0][10]              2         1     15.44         0.00       3   
+fifo[0][11]              2         1     15.44         0.00       3   
+fifo[0][12]              2         1     15.44         0.00       3   
+fifo[0][13]              2         1     15.44         0.00       3   
+fifo[0][14]              2         1     15.44         0.00       3   
+fifo[0][15]              2         1     15.44         0.00       3   
+fifo[1][0]               2         1     15.44         0.00       3   
+fifo[1][1]               2         1     15.44         0.00       3   
+fifo[1][2]               2         1     15.44         0.00       3   
+fifo[1][3]               2         1     15.44         0.00       3   
+fifo[1][4]               2         1     15.44         0.00       3   
+fifo[1][5]               2         1     15.44         0.00       3   
+fifo[1][6]               2         1     15.44         0.00       3   
+fifo[1][7]               2         1     15.44         0.00       3   
+fifo[1][8]               2         1     15.44         0.00       3   
+fifo[1][9]               2         1     15.44         0.00       3   
+fifo[1][10]              2         1     15.44         0.00       3   
+fifo[1][11]              2         1     15.44         0.00       3   
+fifo[1][12]              2         1     15.44         0.00       3   
+fifo[1][13]              2         1     15.44         0.00       3   
+fifo[1][14]              2         1     15.44         0.00       3   
+fifo[1][15]              2         1     15.44         0.00       3   
+fifo[2][0]               2         1     16.79         0.00       3   
+fifo[2][1]               2         1     16.79         0.00       3   
+fifo[2][2]               2         1     16.79         0.00       3   
+fifo[2][3]               2         1     16.79         0.00       3   
+fifo[2][4]               2         1     16.79         0.00       3   
+fifo[2][5]               2         1     16.79         0.00       3   
+fifo[2][6]               2         1     16.79         0.00       3   
+fifo[2][7]               2         1     16.79         0.00       3   
+fifo[2][8]               2         1     16.79         0.00       3   
+fifo[2][9]               2         1     16.79         0.00       3   
+fifo[2][10]              2         1     16.79         0.00       3   
+fifo[2][11]              2         1     16.79         0.00       3   
+fifo[2][12]              2         1     16.79         0.00       3   
+fifo[2][13]              2         1     16.79         0.00       3   
+fifo[2][14]              2         1     16.79         0.00       3   
+fifo[2][15]              2         1     16.79         0.00       3   
+fifo[3][0]               2         1     16.79         0.00       3   
+fifo[3][1]               2         1     16.79         0.00       3   
+fifo[3][2]               2         1     16.79         0.00       3   
+fifo[3][3]               2         1     16.79         0.00       3   
+fifo[3][4]               2         1     16.79         0.00       3   
+fifo[3][5]               2         1     16.79         0.00       3   
+fifo[3][6]               2         1     16.79         0.00       3   
+fifo[3][7]               2         1     16.79         0.00       3   
+fifo[3][8]               2         1     16.79         0.00       3   
+fifo[3][9]               2         1     16.79         0.00       3   
+fifo[3][10]              2         1     16.79         0.00       3   
+fifo[3][11]              2         1     16.79         0.00       3   
+fifo[3][12]              2         1     16.79         0.00       3   
+fifo[3][13]              2         1     16.79         0.00       3   
+fifo[3][14]              2         1     16.79         0.00       3   
+fifo[3][15]              2         1     16.79         0.00       3   
+fifo[4][0]               2         1     15.44         0.00       3   
+fifo[4][1]               2         1     15.44         0.00       3   
+fifo[4][2]               2         1     15.44         0.00       3   
+fifo[4][3]               2         1     15.44         0.00       3   
+fifo[4][4]               2         1     15.44         0.00       3   
+fifo[4][5]               2         1     15.44         0.00       3   
+fifo[4][6]               2         1     15.44         0.00       3   
+fifo[4][7]               2         1     15.44         0.00       3   
+fifo[4][8]               2         1     15.44         0.00       3   
+fifo[4][9]               2         1     15.44         0.00       3   
+fifo[4][10]              2         1     15.44         0.00       3   
+fifo[4][11]              2         1     15.44         0.00       3   
+fifo[4][12]              2         1     15.44         0.00       3   
+fifo[4][13]              2         1     15.44         0.00       3   
+fifo[4][14]              2         1     15.44         0.00       3   
+fifo[4][15]              2         1     15.44         0.00       3   
+fifo[5][0]               2         1     15.44         0.00       3   
+fifo[5][1]               2         1     15.44         0.00       3   
+fifo[5][2]               2         1     15.44         0.00       3   
+fifo[5][3]               2         1     15.44         0.00       3   
+fifo[5][4]               2         1     15.44         0.00       3   
+fifo[5][5]               2         1     15.44         0.00       3   
+fifo[5][6]               2         1     15.44         0.00       3   
+fifo[5][7]               2         1     15.44         0.00       3   
+fifo[5][8]               2         1     15.44         0.00       3   
+fifo[5][9]               2         1     15.44         0.00       3   
+fifo[5][10]              2         1     15.44         0.00       3   
+fifo[5][11]              2         1     15.44         0.00       3   
+fifo[5][12]              2         1     15.44         0.00       3   
+fifo[5][13]              2         1     15.44         0.00       3   
+fifo[5][14]              2         1     15.44         0.00       3   
+fifo[5][15]              2         1     15.44         0.00       3   
+fifo[6][0]               2         1     16.79         0.00       3   
+fifo[6][1]               2         1     16.79         0.00       3   
+fifo[6][2]               2         1     16.79         0.00       3   
+fifo[6][3]               2         1     16.79         0.00       3   
+fifo[6][4]               2         1     16.79         0.00       3   
+fifo[6][5]               2         1     16.79         0.00       3   
+fifo[6][6]               2         1     16.79         0.00       3   
+fifo[6][7]               2         1     16.79         0.00       3   
+fifo[6][8]               2         1     16.79         0.00       3   
+fifo[6][9]               2         1     16.79         0.00       3   
+fifo[6][10]              2         1     16.79         0.00       3   
+fifo[6][11]              2         1     16.79         0.00       3   
+fifo[6][12]              2         1     16.79         0.00       3   
+fifo[6][13]              2         1     16.79         0.00       3   
+fifo[6][14]              2         1     16.79         0.00       3   
+fifo[6][15]              2         1     16.79         0.00       3   
+fifo[7][0]               2         1     16.79         0.00       3   
+fifo[7][1]               2         1     16.79         0.00       3   
+fifo[7][2]               2         1     16.79         0.00       3   
+fifo[7][3]               2         1     16.79         0.00       3   
+fifo[7][4]               2         1     16.79         0.00       3   
+fifo[7][5]               2         1     16.79         0.00       3   
+fifo[7][6]               2         1     16.79         0.00       3   
+fifo[7][7]               2         1     16.79         0.00       3   
+fifo[7][8]               2         1     16.79         0.00       3   
+fifo[7][9]               2         1     16.79         0.00       3   
+fifo[7][10]              2         1     16.79         0.00       3   
+fifo[7][11]              2         1     16.79         0.00       3   
+fifo[7][12]              2         1     16.79         0.00       3   
+fifo[7][13]              2         1     16.79         0.00       3   
+fifo[7][14]              2         1     16.79         0.00       3   
+fifo[7][15]              2         1     16.79         0.00       3   
+full                     1         1      0.00         0.00       2   
+n31                     17         1    141.45         0.00      18   
+n32                      4         1     45.27         0.00       5   
+n33                      1         1      9.92         0.00       2   
+n34                      2         1     19.31         0.00       3   
+n35                      1         1     10.03         0.00       2   
+n36                      1         1      9.92         0.00       2   
+n37                     17         1    130.94         0.00      18   
+n38                      4         1     22.10         0.00       5   
+n39                     17         1    137.24         0.00      18   
+n40                      3         1     23.84         0.00       4   
+n41                     17         1    130.94         0.00      18   
+n42                     17         1    130.94         0.00      18   
+n43                      3         1     27.93         0.00       4   
+n44                      3         1     30.80         0.00       4   
+n45                     17         1    130.94         0.00      18   
+n46                      4         1     31.66         0.00       5   
+n47                     17         1    130.94         0.00      18   
+n48                     17         1    130.94         0.00      18   
+n49                     17         1    137.24         0.00      18   
+n50                      2         1     19.64         0.00       3   
+n51                      2         1     12.67         0.00       3   
+n52                      3         1     35.16         0.00       4   
+n53                      3         1     27.58         0.00       4   
+n54                      1         1      3.99         0.00       2   
+n55                      2         1     27.14         0.00       3   
+n56                      2         1     25.54         0.00       3   
+n57                      1         1      3.66         0.00       2   
+n58                      2         1     10.63         0.00       3   
+n59                      1         1      3.99         0.00       2   
+n60                      1         1     18.35         0.00       2   
+n61                      1         1     18.35         0.00       2   
+n64                      1         1      2.74         0.00       2   
+n65                      1         1      2.74         0.00       2   
+n66                      1         1      2.74         0.00       2   
+n67                      1         1      2.74         0.00       2   
+n68                      1         1      2.74         0.00       2   
+n69                      1         1      2.74         0.00       2   
+n70                      1         1      2.74         0.00       2   
+n71                      1         1      2.74         0.00       2   
+n72                      1         1      2.74         0.00       2   
+n73                      1         1      2.74         0.00       2   
+n74                      1         1      2.74         0.00       2   
+n75                      1         1      2.74         0.00       2   
+n76                      1         1      2.74         0.00       2   
+n77                      1         1      2.74         0.00       2   
+n78                      1         1      2.74         0.00       2   
+n79                      1         1      2.74         0.00       2   
+n80                      1         1      2.74         0.00       2   
+n81                      1         1      2.74         0.00       2   
+n82                      1         1      2.74         0.00       2   
+n83                      1         1      2.74         0.00       2   
+n84                      1         1      2.74         0.00       2   
+n85                      1         1      2.74         0.00       2   
+n86                      1         1      2.74         0.00       2   
+n87                      1         1      2.74         0.00       2   
+n88                      1         1      2.74         0.00       2   
+n89                      1         1      2.74         0.00       2   
+n90                      1         1      2.74         0.00       2   
+n91                      1         1      2.74         0.00       2   
+n92                      1         1      2.74         0.00       2   
+n93                      1         1      2.74         0.00       2   
+n94                      1         1      2.74         0.00       2   
+n95                      1         1      2.74         0.00       2   
+n96                      1         1      2.74         0.00       2   
+n97                      1         1      2.74         0.00       2   
+n98                      1         1      2.74         0.00       2   
+n99                      1         1      2.74         0.00       2   
+n100                     1         1      2.74         0.00       2   
+n101                     1         1      2.74         0.00       2   
+n102                     1         1      2.74         0.00       2   
+n103                     1         1      2.74         0.00       2   
+n104                     1         1      2.74         0.00       2   
+n105                     1         1      2.74         0.00       2   
+n106                     1         1      2.74         0.00       2   
+n107                     1         1      2.74         0.00       2   
+n108                     1         1      2.74         0.00       2   
+n109                     1         1      2.74         0.00       2   
+n110                     1         1      2.74         0.00       2   
+n111                     1         1      2.74         0.00       2   
+n112                     1         1      2.74         0.00       2   
+n113                     1         1      2.74         0.00       2   
+n114                     1         1      2.74         0.00       2   
+n115                     1         1      2.74         0.00       2   
+n116                     1         1      2.74         0.00       2   
+n117                     1         1      2.74         0.00       2   
+n118                     1         1      2.74         0.00       2   
+n119                     1         1      2.74         0.00       2   
+n120                     1         1      2.74         0.00       2   
+n121                     1         1      2.74         0.00       2   
+n122                     1         1      2.74         0.00       2   
+n123                     1         1      2.74         0.00       2   
+n124                     1         1      2.74         0.00       2   
+n125                     1         1      2.74         0.00       2   
+n126                     1         1      2.74         0.00       2   
+n127                     1         1      2.74         0.00       2   
+n128                     1         1      2.74         0.00       2   
+n129                     1         1      2.74         0.00       2   
+n130                     1         1      2.74         0.00       2   
+n131                     1         1      2.74         0.00       2   
+n132                     1         1      2.74         0.00       2   
+n133                     1         1      2.74         0.00       2   
+n134                     1         1      2.74         0.00       2   
+n135                     1         1      2.74         0.00       2   
+n136                     1         1      2.74         0.00       2   
+n137                     1         1      2.74         0.00       2   
+n138                     1         1      2.74         0.00       2   
+n139                     1         1      2.74         0.00       2   
+n140                     1         1      2.74         0.00       2   
+n141                     1         1      2.74         0.00       2   
+n142                     1         1      2.74         0.00       2   
+n143                     1         1      2.74         0.00       2   
+n144                     1         1      2.74         0.00       2   
+n145                     1         1      2.74         0.00       2   
+n146                     1         1      2.74         0.00       2   
+n147                     1         1      2.74         0.00       2   
+n148                     1         1      2.74         0.00       2   
+n149                     1         1      2.74         0.00       2   
+n150                     1         1      2.74         0.00       2   
+n151                     1         1      2.74         0.00       2   
+n152                     1         1      2.74         0.00       2   
+n153                     1         1      2.74         0.00       2   
+n154                     1         1      2.74         0.00       2   
+n155                     1         1      2.74         0.00       2   
+n156                     1         1      2.74         0.00       2   
+n157                     1         1      2.74         0.00       2   
+n158                     1         1      2.74         0.00       2   
+n159                     1         1      2.74         0.00       2   
+n160                     1         1      2.74         0.00       2   
+n161                     1         1      2.74         0.00       2   
+n162                     1         1      2.74         0.00       2   
+n163                     1         1      2.74         0.00       2   
+n164                     1         1      2.74         0.00       2   
+n165                     1         1      2.74         0.00       2   
+n166                     1         1      2.74         0.00       2   
+n167                     1         1      2.74         0.00       2   
+n168                     1         1      2.74         0.00       2   
+n169                     1         1      2.74         0.00       2   
+n170                     1         1      2.74         0.00       2   
+n171                     1         1      2.74         0.00       2   
+n172                     1         1      2.74         0.00       2   
+n173                     1         1      2.74         0.00       2   
+n174                     1         1      2.74         0.00       2   
+n175                     1         1      2.74         0.00       2   
+n176                     1         1      2.74         0.00       2   
+n177                     1         1      2.74         0.00       2   
+n178                     1         1      2.74         0.00       2   
+n179                     1         1      2.74         0.00       2   
+n180                     1         1      2.74         0.00       2   
+n181                     1         1      2.74         0.00       2   
+n182                     1         1      2.74         0.00       2   
+n183                     1         1      2.74         0.00       2   
+n184                     1         1      2.74         0.00       2   
+n185                     1         1      2.74         0.00       2   
+n186                     1         1      2.74         0.00       2   
+n187                     1         1      2.74         0.00       2   
+n188                     1         1      2.74         0.00       2   
+n189                     1         1      2.74         0.00       2   
+n190                     1         1      2.74         0.00       2   
+n191                     1         1      2.74         0.00       2   
+n192                     1         1      2.74         0.00       2   
+n193                     1         1      2.74         0.00       2   
+n194                     1         1      2.74         0.00       2   
+n195                     1         1      2.74         0.00       2   
+n196                     1         1      2.74         0.00       2   
+n197                     1         1      2.74         0.00       2   
+n198                     1         1      2.74         0.00       2   
+n199                     1         1      2.74         0.00       2   
+n200                     1         1      2.74         0.00       2   
+n201                     1         1      2.74         0.00       2   
+n202                     1         1      2.74         0.00       2   
+n203                     1         1      2.74         0.00       2   
+n204                     1         1      2.74         0.00       2   
+n205                     1         1      2.74         0.00       2   
+n206                     1         1      2.74         0.00       2   
+n207                     1         1      2.74         0.00       2   
+n208                     1         1      2.74         0.00       2   
+n209                     1         1      2.74         0.00       2   
+n210                     1         1      2.74         0.00       2   
+n211                     1         1      2.74         0.00       2   
+n212                     1         1      2.74         0.00       2   
+n213                     1         1      2.74         0.00       2   
+n214                     1         1      7.85         0.00       2   
+n215                     1         1      6.39         0.00       2   
+n216                     2         1     15.05         0.00       3   
+n217                     2         1     15.05         0.00       3   
+n218                     2         1     15.05         0.00       3   
+n219                     2         1     15.05         0.00       3   
+n220                     1         1     10.17         0.00       2   
+n221                     1         1      9.46         0.00       2   
+n222                     1         1      8.83         0.00       2   
+n223                     1         1      8.72         0.00       2   
+n224                     1         1     10.17         0.00       2   
+n225                     1         1      9.46         0.00       2   
+n226                     1         1      8.83         0.00       2   
+n227                     1         1      8.72         0.00       2   
+n228                     1         1     10.17         0.00       2   
+n229                     1         1      9.46         0.00       2   
+n230                     1         1      8.83         0.00       2   
+n231                     1         1      8.72         0.00       2   
+n232                     1         1     10.17         0.00       2   
+n233                     1         1      9.46         0.00       2   
+n234                     1         1      8.83         0.00       2   
+n235                     1         1      8.72         0.00       2   
+n236                     1         1     10.17         0.00       2   
+n237                     1         1      9.46         0.00       2   
+n238                     1         1      8.83         0.00       2   
+n239                     1         1      8.72         0.00       2   
+n240                     1         1     10.17         0.00       2   
+n241                     1         1      9.46         0.00       2   
+n242                     1         1      8.83         0.00       2   
+n243                     1         1      8.72         0.00       2   
+n244                     1         1     10.17         0.00       2   
+n245                     1         1      9.46         0.00       2   
+n246                     1         1      8.83         0.00       2   
+n247                     1         1      8.72         0.00       2   
+n248                     1         1     10.17         0.00       2   
+n249                     1         1      9.46         0.00       2   
+n250                     1         1      8.83         0.00       2   
+n251                     1         1      8.72         0.00       2   
+n252                     1         1     10.17         0.00       2   
+n253                     1         1      9.46         0.00       2   
+n254                     1         1      8.83         0.00       2   
+n255                     1         1      8.72         0.00       2   
+n256                     1         1     10.17         0.00       2   
+n257                     1         1      9.46         0.00       2   
+n258                     1         1      8.83         0.00       2   
+n259                     1         1      8.72         0.00       2   
+n260                     1         1     10.17         0.00       2   
+n261                     1         1      9.46         0.00       2   
+n262                     1         1      8.83         0.00       2   
+n263                     1         1      8.72         0.00       2   
+n264                     1         1     10.17         0.00       2   
+n265                     1         1      9.46         0.00       2   
+n266                     1         1      8.83         0.00       2   
+n267                     1         1      8.72         0.00       2   
+n268                     1         1     10.17         0.00       2   
+n269                     1         1      9.46         0.00       2   
+n270                     1         1      8.83         0.00       2   
+n271                     1         1      8.72         0.00       2   
+n272                     1         1     10.17         0.00       2   
+n273                     1         1      9.46         0.00       2   
+n274                     1         1      8.83         0.00       2   
+n275                     1         1      8.72         0.00       2   
+n276                     1         1     10.17         0.00       2   
+n277                     1         1      9.46         0.00       2   
+n278                     1         1      8.83         0.00       2   
+n279                     1         1      8.72         0.00       2   
+n280                    16         1    150.03         0.00      17   
+n281                    16         1    149.33         0.00      17   
+n282                    16         1    150.03         0.00      17   
+n283                    16         1    149.33         0.00      17   
+n284                    16         1    150.03         0.00      17   
+n285                    16         1    149.33         0.00      17   
+n286                    16         1    150.03         0.00      17   
+n287                    16         1    149.33         0.00      17   
+n288                     1         1     10.17         0.00       2   
+n289                     1         1      9.46         0.00       2   
+n290                     1         1      8.83         0.00       2   
+n291                     1         1      8.72         0.00       2   
+n292                     4         1     46.13         0.00       5   
+n293                    16         1    113.94         0.00      17   
+n294                    16         1    120.24         0.00      17   
+n295                    16         1    120.24         0.00      17   
+n296                    16         1    120.24         0.00      17   
+n297                    16         1    124.45         0.00      17   
+n298                    16         1    113.94         0.00      17   
+n299                     3         1     26.28         0.00       4   
+n300                    16         1    120.24         0.00      17   
+n301                    16         1    120.24         0.00      17   
+n302                    16         1    113.94         0.00      17   
+n303                     3         1     23.68         0.00       4   
+n304                     4         1     29.62         0.00       5   
+n305                     1         1      8.70         0.00       2   
+n308                     3         1     35.05         0.00       4   
+n309                     4         1     29.69         0.00       5   
+n310                     6         1     39.35         0.00       7   
+n311                     5         1     30.64         0.00       6   
+n312                     6         1     71.54         0.00       7   
+r_en                     1         1      8.73         0.00       2   
+rst_n                    6         1     62.01         0.00       7   
+w_en                     1         1      8.79         0.00       2   
+w_ptr[0]                 8         1     78.37         0.00       9   
+w_ptr[1]                 5         1     52.28         0.00       6   
+w_ptr[2]                 6         1     60.46         0.00       7   
+--------------------------------------------------------------------------------
+Total 466 nets        1367       466   9535.02         0.00    1833
+Maximum                150         1    450.00         0.00     151
+Average               2.93      1.00     20.46         0.00    3.93
+1
+update_timing
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+1
+report_timing -max_paths 1 >> report_timing.txt
+report_area >> report_area.txt
+report_power >> report_power.txt
+write -hierarchy -format verilog -output fifo_netlist.v
+Writing verilog file '/home/015954770@SJSUAD.SJSU.EDU/man_scan/fifo/fifo_netlist.v'.
+1
+quit
+
+Thank you...
